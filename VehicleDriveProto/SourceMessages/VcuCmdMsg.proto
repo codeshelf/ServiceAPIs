@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+message Drive {
+	required int32 velocity = 1;
+	required string direction = 2;
+	required double acceleration = 3;
+	required double distance = 4;
+	optional double edgeDistance = 5;
+	optional string edgeSide = 6;
+}
+
+message Orbit {
+	required double velocity = 1;
+	required string direction = 2;
+	required double acceleration = 3;
+	required double degrees = 4;
+}
+
+message Halt {
+	required double acceleration = 1;
+}
+
+message VcuWrapperMessage {
+	oneof msg {
+		Drive drive = 1;
+		Orbit orbit = 2;
+		Halt halt = 3;
+	}
+}
