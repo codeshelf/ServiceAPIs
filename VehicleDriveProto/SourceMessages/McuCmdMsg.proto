@@ -1,26 +1,21 @@
-syntax = "proto2";
+syntax = "proto3";
 
-message Motor {
-	required int32 motorNumber = 1;
-	required double degPerSec = 2;
-	required double rotationDeg = 3;
-	required double accelDegSec2 = 4;
+message MotorCmd {
+	int32 motorNumber = 1;
+	double degPerSec = 2;
+	double rotationDeg = 3;
+	double accelDegSec2 = 4;
 }
 
 message SensorData {
-	required string name = 1;
-	required double value = 2;
-	required string unit = 3;
-}
-
-message Monitor {
-	required string sensorName = 1;
-	repeated SensorData sensorData = 2;
+	string name = 1;
+	double value = 2;
+	string unit = 3;
 }
 
 message McuWrapperMessage {
 	oneof msg {
-		Motor motor = 1;
-		Monitor monitor = 2;
+		MotorCmd motorCmd = 1;
+		SensorData sensorData = 2;
 	}
 }
