@@ -1,23 +1,23 @@
 syntax = "proto3";
 
 message Drive {
-	required int32 velocity = 1;
-	required string direction = 2;
-	required double acceleration = 3;
-	required double distance = 4;
-	optional double edgeDistance = 5;
-	optional string edgeSide = 6;
+	int32 velocity = 1;
+	string direction = 2;
+	double acceleration = 3;
+	double distance = 4;
+	double edgeDistance = 5;
+	string edgeSide = 6;
 }
 
 message Orbit {
-	required double velocity = 1;
-	required string direction = 2;
-	required double acceleration = 3;
-	required double degrees = 4;
+	double velocity = 1;
+	string direction = 2;
+	double acceleration = 3;
+	double degrees = 4;
 }
 
 message Halt {
-	required double acceleration = 1;
+	double acceleration = 1;
 }
 
 message VcuWrapperMessage {

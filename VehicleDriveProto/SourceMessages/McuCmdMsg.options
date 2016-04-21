@@ -1,2 +1,3 @@
 SensorData.name			max_size:32
 SensorData.unit			max_size:32
+McuWrapperMessage.msg	no_unions:false
