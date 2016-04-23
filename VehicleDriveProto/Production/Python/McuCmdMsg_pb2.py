@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='McuCmdMsg.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\x0fMcuCmdMsg.proto\"]\n\x08MotorCmd\x12\x13\n\x0bmotorNumber\x18\x01 \x01(\x05\x12\x11\n\tdegPerSec\x18\x02 \x01(\x01\x12\x13\n\x0brotationDeg\x18\x03 \x01(\x01\x12\x14\n\x0c\x61\x63\x63\x65lDegSec2\x18\x04 \x01(\x01\"7\n\nSensorData\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01\x12\x0c\n\x04unit\x18\x03 \x01(\t\"\\\n\x11McuWrapperMessage\x12\x1d\n\x08motorCmd\x18\x01 \x01(\x0b\x32\t.MotorCmdH\x00\x12!\n\nsensorData\x18\x02 \x01(\x0b\x32\x0b.SensorDataH\x00\x42\x05\n\x03msgb\x06proto3')
+  serialized_pb=_b('\n\x0fMcuCmdMsg.proto\"E\n\x08MotorCmd\x12\x0b\n\x03num\x18\x01 \x01(\x05\x12\x0b\n\x03\x64ir\x18\x02 \x01(\x05\x12\x0e\n\x06\x64\x65gSec\x18\x03 \x01(\x01\x12\x0f\n\x07\x61\x44\x65gSec\x18\x04 \x01(\x01\"6\n\tSensorCmd\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01\x12\x0c\n\x04unit\x18\x03 \x01(\t\"Z\n\x11McuWrapperMessage\x12\x1d\n\x08motorCmd\x18\x01 \x01(\x0b\x32\t.MotorCmdH\x00\x12\x1f\n\tsensorCmd\x18\x02 \x01(\x0b\x32\n.SensorCmdH\x00\x42\x05\n\x03msgb\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -34,28 +34,28 @@ _MOTORCMD = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='motorNumber', full_name='MotorCmd.motorNumber', index=0,
+      name='num', full_name='MotorCmd.num', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='degPerSec', full_name='MotorCmd.degPerSec', index=1,
-      number=2, type=1, cpp_type=5, label=1,
+      name='dir', full_name='MotorCmd.dir', index=1,
+      number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='rotationDeg', full_name='MotorCmd.rotationDeg', index=2,
+      name='degSec', full_name='MotorCmd.degSec', index=2,
       number=3, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='accelDegSec2', full_name='MotorCmd.accelDegSec2', index=3,
+      name='aDegSec', full_name='MotorCmd.aDegSec', index=3,
       number=4, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -74,33 +74,33 @@ _MOTORCMD = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=19,
-  serialized_end=112,
+  serialized_end=88,
 )
 
 
-_SENSORDATA = _descriptor.Descriptor(
-  name='SensorData',
-  full_name='SensorData',
+_SENSORCMD = _descriptor.Descriptor(
+  name='SensorCmd',
+  full_name='SensorCmd',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='SensorData.name', index=0,
+      name='name', full_name='SensorCmd.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='SensorData.value', index=1,
+      name='value', full_name='SensorCmd.value', index=1,
       number=2, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='unit', full_name='SensorData.unit', index=2,
+      name='unit', full_name='SensorCmd.unit', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -118,8 +118,8 @@ _SENSORDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=114,
-  serialized_end=169,
+  serialized_start=90,
+  serialized_end=144,
 )
 
 
@@ -138,7 +138,7 @@ _MCUWRAPPERMESSAGE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='sensorData', full_name='McuWrapperMessage.sensorData', index=1,
+      name='sensorCmd', full_name='McuWrapperMessage.sensorCmd', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -159,20 +159,20 @@ _MCUWRAPPERMESSAGE = _descriptor.Descriptor(
       name='msg', full_name='McuWrapperMessage.msg',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=171,
-  serialized_end=263,
+  serialized_start=146,
+  serialized_end=236,
 )
 
 _MCUWRAPPERMESSAGE.fields_by_name['motorCmd'].message_type = _MOTORCMD
-_MCUWRAPPERMESSAGE.fields_by_name['sensorData'].message_type = _SENSORDATA
+_MCUWRAPPERMESSAGE.fields_by_name['sensorCmd'].message_type = _SENSORCMD
 _MCUWRAPPERMESSAGE.oneofs_by_name['msg'].fields.append(
   _MCUWRAPPERMESSAGE.fields_by_name['motorCmd'])
 _MCUWRAPPERMESSAGE.fields_by_name['motorCmd'].containing_oneof = _MCUWRAPPERMESSAGE.oneofs_by_name['msg']
 _MCUWRAPPERMESSAGE.oneofs_by_name['msg'].fields.append(
-  _MCUWRAPPERMESSAGE.fields_by_name['sensorData'])
-_MCUWRAPPERMESSAGE.fields_by_name['sensorData'].containing_oneof = _MCUWRAPPERMESSAGE.oneofs_by_name['msg']
+  _MCUWRAPPERMESSAGE.fields_by_name['sensorCmd'])
+_MCUWRAPPERMESSAGE.fields_by_name['sensorCmd'].containing_oneof = _MCUWRAPPERMESSAGE.oneofs_by_name['msg']
 DESCRIPTOR.message_types_by_name['MotorCmd'] = _MOTORCMD
-DESCRIPTOR.message_types_by_name['SensorData'] = _SENSORDATA
+DESCRIPTOR.message_types_by_name['SensorCmd'] = _SENSORCMD
 DESCRIPTOR.message_types_by_name['McuWrapperMessage'] = _MCUWRAPPERMESSAGE
 
 MotorCmd = _reflection.GeneratedProtocolMessageType('MotorCmd', (_message.Message,), dict(
@@ -182,12 +182,12 @@ MotorCmd = _reflection.GeneratedProtocolMessageType('MotorCmd', (_message.Messag
   ))
 _sym_db.RegisterMessage(MotorCmd)
 
-SensorData = _reflection.GeneratedProtocolMessageType('SensorData', (_message.Message,), dict(
-  DESCRIPTOR = _SENSORDATA,
+SensorCmd = _reflection.GeneratedProtocolMessageType('SensorCmd', (_message.Message,), dict(
+  DESCRIPTOR = _SENSORCMD,
   __module__ = 'McuCmdMsg_pb2'
-  # @@protoc_insertion_point(class_scope:SensorData)
+  # @@protoc_insertion_point(class_scope:SensorCmd)
   ))
-_sym_db.RegisterMessage(SensorData)
+_sym_db.RegisterMessage(SensorCmd)
 
 McuWrapperMessage = _reflection.GeneratedProtocolMessageType('McuWrapperMessage', (_message.Message,), dict(
   DESCRIPTOR = _MCUWRAPPERMESSAGE,

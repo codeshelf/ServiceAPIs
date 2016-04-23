@@ -1,13 +1,13 @@
 syntax = "proto3";
 
 message MotorCmd {
-	int32 motorNumber = 1;
-	double degPerSec = 2;
-	double rotationDeg = 3;
-	double accelDegSec2 = 4;
+	int32 num = 1;
+	int32 dir = 2;
+	double degSec = 3;
+	double aDegSec = 4;
 }
 
-message SensorData {
+message SensorCmd {
 	string name = 1;
 	double value = 2;
 	string unit = 3;
@@ -16,6 +16,6 @@ message SensorData {
 message McuWrapperMessage {
 	oneof msg {
 		MotorCmd motorCmd = 1;
-		SensorData sensorData = 2;
+		SensorCmd sensorCmd = 2;
 	}
 }
